@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Const_over{
+    class Eg{
+        string name;
+        int age;
+        public Eg()
+        {
+            name = "ABC";
+            age = 22;
+            Console.WriteLine("Name" + name + "age" + age);
+        }
+        public Eg(String nm, int a)
+        {
+            name = nm;
+            age = a;
+            Console.WriteLine("New name:" + name + "Age:" + age);
+        }
+        class Dry{
+            static void Main(string[] args)
+            {
+                Eg e = new Eg();
+                Eg e1 = new Eg("XYZ",19);
+            }
+        }
+    }
+}

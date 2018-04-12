@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i, count, F1=0, F2=1, F3=0, choice, F;
+            Console.Write("enter 1=factorial and 2=Fibonaci");
+            choice=Convert.ToInt32(Console.ReadLine());
+            if (choice == 1)
+            {
+                Console.Write("enter a number");
+                i = Convert.ToInt32(Console.ReadLine());
+                for (i = 1; i<= 1; i++)
+                {
+                    F = F * i;
+                }
+                Console.Write("Factoral=", F);
+            }
+            else
+            {
+                Console.Write("enter the limit");
+                count = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(F1);
+                Console.WriteLine(F2);
+                for (i = 0; i <= count; i++)
+                {
+                    F3 = F1 + F2;
+                    Console.WriteLine(F3);
+                    F1 = F2;
+                    F2 = F3;
+                }
+            }
+        }
+    }
+}

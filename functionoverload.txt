@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Funct_Over
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            cal.sum();
+            cal.sum(5, 4);
+            cal.sum("HI");
+            Console.Read();
+
+
+
+        }
+
+    }
+    static class cal
+    {
+        public static void sum()
+        {
+            Console.WriteLine("no value provided");
+        }
+        public static void sum(int x, int y)
+        {
+            Console.WriteLine("The sum of" + x + "and" + y + "is : " + (x + y));
+
+        }
+        public static void sum(String s)
+        {
+            Console.WriteLine(s + "SYCS");
+        }
+    }
+}
+

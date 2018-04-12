@@ -1,0 +1,41 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+    </div>
+    Username:(required)
+    <asp:TextBox ID="textName" runat="server" ontextchanged="textName_TextChanged"></asp:TextBox>
+    <p>
+        <asp:RequiredFieldValidator ID="REV1" runat="server" 
+            ControlToValidate="textName" CssClass="validators" 
+            ErrorMessage="name is required"></asp:RequiredFieldValidator>
+    </p>
+    <p>
+        &nbsp;</p>
+        Age:(betwn 18-45)
+    <asp:TextBox ID="txtAge" runat="server"></asp:TextBox>
+    <br />
+    <asp:RangeValidator ID="RV1" runat="server" ControlToValidate="txtAge" 
+        CssClass="validator" Display="Dynamic" ErrorMessage="age rane 18 to 43" 
+        MaximumValue="43" MinimumValue="18" Type="Integer"></asp:RangeValidator>
+    <br />
+    <br />
+    <br />
+    Password:<br />
+    <asp:TextBox ID="txtpwd" runat="server"></asp:TextBox>
+    <br />
+    <br />
+    confrm password:<br />
+    <asp:TextBox ID="txtcp" runat="server"></asp:TextBox>
+    <br />
+    <br />
+    <asp:CompareValidator ID="cmp1" runat="server" ControlToCompare="txtcp" 
+        ControlToValidate="txtpwd" ErrorMessage="the pass doesnt match"></asp:CompareValidator>
+    </form>
+</body>
+</html>

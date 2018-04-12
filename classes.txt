@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace create_class
+{
+    class accept
+    {
+        public string name;
+        public void accept_details()
+        {
+            Console.Write("enter your name:\t");
+            name = Console.ReadLine();
+        }
+
+        class print
+        {
+            public void printdt()
+            {
+                accept a = new accept();
+                a.accept_details();
+                Console.WriteLine("your name is" + a.name);
+            }
+        }
+        class Program
+        {
+            static void Main(String[] args)
+            {
+                print p = new print();
+                p.printdt();
+            }
+        }
+
+    }
+}        
+            

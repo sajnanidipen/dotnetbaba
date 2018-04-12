@@ -1,0 +1,76 @@
+#<Cookie>#
+
+Add 1 Input Box, Label, CheckBox (Write Code on CheckBox)
+
+#Code:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace DemoCookie
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            HttpCookie student = new HttpCookie("student");
+            student.Value = TextBox1.Text;
+            student.Expires = DateTime.Now.AddDays(1);
+            Response.Cookies.Add(student);
+            String outcookie = Request.Cookies.Get("student").Value;
+            Label1.Text = "Cookie is:" + outcookie;
+        }
+    }
+}
+
+#<XML>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml;
+
+namespace XMLReadWrite
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            XmlTextWriter writer = new XmlTextWriter("Book.xml", null);
+            writer.WriteStartElement("Book");
+            writer.WriteElementString("id","01");
+            writer.WriteElementString("title", "rich dad poor dad");
+            writer.WriteElementString("price", "300");
+            writer.WriteEndElement();
+            writer.Close();
+            Console.ReadLine();
+            try
+            {
+                string out1 = " ";
+                string format = "XmlNodetype:{0,-12}{1,-10}{2}";
+
+                XmlTextReader xmlreader = new XmlTextReader("Book.xml");
+                while (xmlreader.Read())
+                    out1 = String.Format(format, xmlreader.NodeType, xmlreader.Name, xmlreader.Value);
+                Console.WriteLine(out1);
+            }
+            catch(Exception e){
+                Console.WriteLine(e.Message);
+
+            }
+            Console.ReadLine();
+            }
+
+        }
+    }
+
